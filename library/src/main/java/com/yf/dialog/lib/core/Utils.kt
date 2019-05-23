@@ -21,7 +21,7 @@ internal object Utils {
 }
 
 val DEBUG = true
-internal inline fun debugLog(value: String) {
+internal fun debugLog(value: String) {
     if (DEBUG) {
         Log.d("yf_dialog", value)
     }
