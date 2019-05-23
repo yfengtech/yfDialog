@@ -13,8 +13,6 @@ view采用抽象样式抛给外部实现的方式
 
 ```
 * 场景1：单个按钮的dialog  
-![单个按钮的dialog]()
-![单个按钮的dialog]()<br>
 ```kotlin
 YFDialog.Builder(this)
     .setSingleBtnView(object : SingleBtnDialog() {
@@ -27,8 +25,7 @@ YFDialog.Builder(this)
     })
     .build().show()
 ```
-* 场景2：两个按钮的dialog  
-![两个按钮的dialog]()
+* 场景2：两个按钮的dialog
 ```kotlin
 YFDialog.Builder(this)
     .setDoubleBtnView(object : DoubleBtnDialog() {
@@ -46,8 +43,7 @@ YFDialog.Builder(this)
     })
     .build().show()
 ```
-* 场景3：顶部有图片的dialog  
-![顶部图片的dialog]()
+* 场景3：顶部有图片的dialog
 ```kotlin
 YFDialog.Builder(this)
     .setDoubleBtnView(object : DoubleBtnDialog() {
@@ -68,8 +64,7 @@ YFDialog.Builder(this)
     })
     .build().show()
 ```
-* 场景4：需要设置进度的dialog  
-![带进度条的dialog]()
+* 场景4：需要设置进度的dialog
 ```kotlin
 val progressDialog = object : ProgressDialog() {
     override fun onButtonClick(dialog: IDialog) {
