@@ -10,7 +10,7 @@ view采用抽象样式抛给外部实现的方式
 ## 使用方式
 * 依赖dialog的library
 ```
-
+implementation 'com.github.moonlight920:yfdialog:1.0.0'
 ```
 * 场景1：单个按钮的dialog  
 ```kotlin
