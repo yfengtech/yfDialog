@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--全局属性集引用-->
+    <attr name="dialogStyle" format="reference"/>
+
+    <!--定义dialog可以设置的style，key为style的name，value为具体的style-->
+    <declare-styleable name="DialogStyle">
+        <attr name="dialogTitle" format="reference"/>
+        <attr name="dialogMessage" format="reference"/>
+        <attr name="dialogButton" format="reference"/>
+        <attr name="dialogButtonMarginTop" format="dimension"/>
+        <attr name="dialogButtonMarginBottom" format="dimension"/>
+        <attr name="dialogTopImage" format="reference"/>
+        <attr name="dialogBackgroundColor" format="color"/>
+        <attr name="dialogDividerColor" format="color"/>
+        <attr name="dialogDividerDimension" format="dimension"/>
+        <attr name="dialogButtonContainerHeight" format="dimension"/>
+    </declare-styleable>
+</resources>

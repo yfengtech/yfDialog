@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="true"
+        app:contentPadding="0dp"
+        app:cardElevation="0dp"
+        android:id="@+id/cardViewBg"
+        app:cardBackgroundColor="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="?dialogStyle">
+    <LinearLayout
+            android:id="@+id/llDialog"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/ivTop"
+                style="?dialogTopImage"
+                android:visibility="gone"/>
+
+        <LinearLayout
+                android:id="@+id/llTextContent"
+                android:orientation="vertical"
+                android:paddingTop="40dp"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:paddingBottom="?dialogButtonMarginTop"
+                android:gravity="center_horizontal"
+                android:background="?dialogBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/tvTitle"
+                    style="?dialogTitle"/>
+            <TextView
+                    android:id="@+id/tvMessage"
+                    style="?dialogMessage"/>
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="?dialogDividerDimension"
+                android:background="?dialogDividerColor"/>
+
+        <LinearLayout
+                android:id="@+id/llDoubleButtonLayout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:background="?dialogBackgroundColor"
+                android:paddingBottom="?dialogButtonMarginBottom"
+                android:gravity="center"
+                android:layout_height="?dialogButtonContainerHeight">
+            <Button
+                    android:id="@+id/leftBtn"
+                    style="?dialogButton"/>
+            <View
+                    android:id="@+id/viewButtonDivider"
+                    android:layout_width="?dialogDividerDimension"
+                    android:visibility="gone"
+                    android:layout_height="match_parent"
+                    android:background="?dialogDividerColor"/>
+
+            <Button
+                    android:id="@+id/rightBtn"
+                    android:visibility="gone"
+                    style="?dialogButton"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

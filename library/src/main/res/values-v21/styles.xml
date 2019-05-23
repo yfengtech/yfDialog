@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="dialogButtonDefaultBg">@drawable/dialoglib_btn_ripple</drawable>
+</resources>

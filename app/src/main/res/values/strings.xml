@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">YFDialog</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_eink">EinkActivity</string>
+</resources>
