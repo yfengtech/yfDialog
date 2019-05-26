@@ -1,5 +1,9 @@
 # YFDialog
 
+为了方便调用，基于DialogFragment封装dialog，支持通用样式和自定义样式
+
+[点此下载apk](https://raw.githubusercontent.com/moonlight920/yfDialog/090813739f93d9e3f2234c4b42e15b838b9a5738/app-debug.apk)
+
 ## 设计思想
 * 采用DialogFragment实现，基于fragment，复用性更好
 * window的设置和view的设置分离开
