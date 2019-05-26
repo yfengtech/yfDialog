@@ -17,12 +17,14 @@
         <item name="dialogBackgroundColor">@android:color/white</item>
         <!--dialog中分割线的尺寸-->
         <item name="dialogDividerDimension">1dp</item>
+        <!--dialog中分割线的尺寸-->
+        <item name="dialogPaddingTop">32dp</item>
         <!--dialog中按钮距离上部控件的距离-->
-        <item name="dialogButtonMarginTop">40dp</item>
+        <item name="dialogButtonMarginTop">32dp</item>
         <!--dialog中按钮距离底边的距离-->
         <item name="dialogButtonMarginBottom">0dp</item>
         <!--dialog中按钮容器的高度-->
-        <item name="dialogButtonContainerHeight">64dp</item>
+        <item name="dialogButtonContainerHeight">44dp</item>
 
     </style>
 
@@ -30,26 +32,26 @@
     <style name="DialogDefaultTitleStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:lineSpacingExtra">12dp</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">6dp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">#FF333333</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
     <style name="DialogDefaultMessageStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">#FF666666</item>
-        <item name="android:lineSpacingExtra">12dp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginTop">16dp</item>
     </style>
     <style name="DialogDefaultButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:background">@drawable/dialogButtonDefaultBg</item>
         <item name="android:textColor">@color/colorDefaultDialogBtnText</item>
     </style>

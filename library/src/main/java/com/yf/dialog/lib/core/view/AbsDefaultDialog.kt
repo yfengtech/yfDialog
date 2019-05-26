@@ -56,16 +56,6 @@ abstract class AbsDefaultDialog : ViewWrapper {
         if (getTopImageResId() == null) {
             ivTop.visibility = View.GONE
         } else {
-            // 如果顶部有图片，重新计算顶部距离
-            val newPaddingTop = llTextContent.paddingTop - 30
-            if (newPaddingTop > 0) {
-                llTextContent.setPadding(
-                    llTextContent.paddingLeft,
-                    Utils.dp2px(newPaddingTop.toFloat()),
-                    llTextContent.paddingRight,
-                    llTextContent.paddingBottom
-                )
-            }
             ivTop.setImageResource(getTopImageResId()!!)
             ivTop.visibility = View.VISIBLE
         }
@@ -109,10 +99,6 @@ abstract class AbsDefaultDialog : ViewWrapper {
             if (newTitle.isNotBlank()) {
                 tvTitle.visibility = View.VISIBLE
                 tvTitle.text = newTitle
-                if (newMessage.isBlank()) {
-                    // 如果只有title，字号减小2号
-                    tvTitle.textSize = 22f
-                }
             } else {
                 tvTitle.visibility = View.GONE
             }

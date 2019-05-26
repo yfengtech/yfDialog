@@ -9,6 +9,7 @@
         <attr name="dialogTitle" format="reference"/>
         <attr name="dialogMessage" format="reference"/>
         <attr name="dialogButton" format="reference"/>
+        <attr name="dialogPaddingTop" format="dimension"/>
         <attr name="dialogButtonMarginTop" format="dimension"/>
         <attr name="dialogButtonMarginBottom" format="dimension"/>
         <attr name="dialogTopImage" format="reference"/>

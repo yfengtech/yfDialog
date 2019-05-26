@@ -26,9 +26,9 @@
         <LinearLayout
                 android:id="@+id/llTextContent"
                 android:orientation="vertical"
-                android:paddingTop="40dp"
-                android:paddingStart="32dp"
-                android:paddingEnd="32dp"
+                android:paddingTop="?dialogPaddingTop"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:paddingBottom="?dialogButtonMarginTop"
                 android:gravity="center_horizontal"
                 android:background="?dialogBackgroundColor"
