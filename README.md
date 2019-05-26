@@ -123,66 +123,7 @@ YFDialog.Builder(this)
     </style>
 </resources>
 ```
-可供覆盖的样式有（默认设置如下，可被覆写）
-```xml
-<resources>
-    <!--整个dialog的默认style-->
-    <style name="DefaultDialogStyle">
-        <!--dialog中title的文本样式-->
-        <item name="dialogTitle">@style/DialogDefaultTitleStyle</item>
-        <!--dialog中message的文本样式-->
-        <item name="dialogMessage">@style/DialogDefaultMessageStyle</item>
-        <!--dialog中下方button的按钮样式-->
-        <item name="dialogButton">@style/DialogDefaultButton</item>
-        <!--dialog中顶部图片的显示样式-->
-        <item name="dialogTopImage">@style/DialogDefaultTopImg</item>
-        <!--dialog中分割线的颜色-->
-        <item name="dialogDividerColor">@color/colorDivider</item>
-        <!--dialog中背景颜色-->
-        <item name="dialogBackgroundColor">@android:color/white</item>
-        <!--dialog中分割线的尺寸-->
-        <item name="dialogDividerDimension">1dp</item>
-        <!--dialog中按钮距离上部控件的距离-->
-        <item name="dialogButtonMarginTop">47dp</item>
-        <!--dialog中按钮距离底边的距离-->
-        <item name="dialogButtonMarginBottom">0dp</item>
-        <!--dialog中按钮容器的高度-->
-        <item name="dialogButtonContainerHeight">63dp</item>
-    </style>
-    
-     <!--以下为dialog的详细默认style-->
-    <style name="DialogDefaultTitleStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">#FF333333</item>
-        <item name="android:gravity">center_horizontal</item>
-    </style>
-    <style name="DialogDefaultMessageStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:textColor">#FF666666</item>
-        <item name="android:lineSpacingExtra">14dp</item>
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:layout_marginTop">20dp</item>
-    </style>
-    <style name="DialogDefaultButton">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:background">@drawable/dialoglib_btn_ripple</item>
-        <item name="android:textColor">@color/colorDefaultDialogBtnText</item>
-    </style>
-    <style name="DialogDefaultTopImg">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:adjustViewBounds">true</item>
-        <item name="android:background">@android:color/transparent</item>
-    </style>
-</resources>
+[点此查看可供覆盖的样式，可被覆写](https://github.com/moonlight920/yfDialog/blob/63eec254071fadfd62bbb44b596f6de538bfec24/library/src/main/res/values/styles.xml)
 ```
 在调用dialog的地方，使用`setViewStyle(int style)`,例如
 ```kotlin
