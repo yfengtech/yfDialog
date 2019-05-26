@@ -18,12 +18,13 @@ import com.yf.dialog.lib.impl.DoubleBtnDialog
 import com.yf.dialog.lib.impl.ProgressDialog
 import com.yf.dialog.lib.impl.SingleBtnDialog
 import com.yf.smarttemplate.SmartTemplate
+import com.yf.smarttemplate.doc.Document
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-
+@Document("README.md")
 class MyApplication : Application() {
 
     private val mDialogLifecycleCallbacks = object : DialogLifecycleCallbacks {
@@ -65,14 +66,6 @@ class MyApplication : Application() {
                 }
             }
             executionItem {
-                title = "默认dialog"
-                execute {
-                    YFDialog.Builder(it)
-                        .setToken("dialog number 2")
-                        .build().show()
-                }
-            }
-            executionItem {
                 title = "只设置title的单按钮dialog"
                 execute {
                     YFDialog.Builder(it)
@@ -85,41 +78,7 @@ class MyApplication : Application() {
                 }
             }
             executionItem {
-                title = "连续弹出dialog"
-                execute {
-                    val dialog = YFDialog.Builder(it)
-                        .setSingleBtnView(object : SingleBtnDialog() {
-                            override fun getTitle(): String = "我是个标题"
-                            override fun getButtonText(): String = "知道了"
-                            override fun onButtonClick(dialog: IDialog) {
-                                val dialog1 = YFDialog.Builder(it)
-                                    .setSingleBtnView(object : SingleBtnDialog() {
-                                        override fun getTitle(): String = "我是个标题"
-                                        override fun getButtonText(): String = "知道了"
-                                    })
-                                    .build()
-                                dialog1.show()
-
-                            }
-                        })
-                        .build()
-                    dialog.show()
-                }
-            }
-            executionItem {
-                title = "只设置message的单按钮dialog"
-                execute {
-                    YFDialog.Builder(it)
-                        .setToken("dialog number 3")
-                        .setSingleBtnView(object : SingleBtnDialog() {
-                            override fun getMessage(): String = "我是个标题"
-                            override fun getButtonText(): String = "知道了"
-                        })
-                        .build().show()
-                }
-            }
-            executionItem {
-                title = "只有一个按钮的单行字并且自定义样式dialog"
+                title = "自定义样式dialog"
                 execute {
                     YFDialog.Builder(it)
                         .setViewStyle(R.style.MyCustomDialogStyle)
@@ -147,23 +106,7 @@ class MyApplication : Application() {
             }
 
             executionItem {
-                title = "只有一个按钮的多内容dialog"
-                execute {
-                    YFDialog.Builder(it)
-                        .setSingleBtnView(object : SingleBtnDialog() {
-                            override fun getTitle(): String =
-                                "我是个标题,我是个标题,我是个标题,我是个标题,我是个标题,我是个标题,我是个标题,我是个标题,我是个标题,我是个标题"
-
-                            override fun getMessage(): String =
-                                "我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容,我是个内容"
-
-                            override fun getButtonText(): String = "知道了"
-                        })
-                        .build().show()
-                }
-            }
-            executionItem {
-                title = "两个按钮的dialog"
+                title = "可动态变化的dialog"
                 execute {
                     val view = object : DoubleBtnDialog() {
                         override fun getTitle(): String = "我是个标题"
@@ -190,70 +133,44 @@ class MyApplication : Application() {
                     dialog.show()
                 }
             }
-            executionItem {
-                title = "只有图片的dialog"
-                execute {
-                    YFDialog.Builder(it)
-                        .setDoubleBtnView(object : DoubleBtnDialog() {
-                            override fun getTopImageResId(): Int? {
-                                return R.drawable.dialog_example_bg_top
-                            }
+            itemList {
+                title = "带图片的dialog"
 
-                            override fun getLeftButtonText(): String = "取消"
-                            override fun getRightButtonText(): String = "确定"
-                        })
-                        .build().show()
-                }
-            }
-            executionItem {
-                title = "有title有message加顶部有图片的dialog"
-                execute {
-                    YFDialog.Builder(it)
-                        .setDoubleBtnView(object : DoubleBtnDialog() {
-                            override fun getTopImageResId(): Int? {
-                                return R.drawable.dialog_example_bg_top
-                            }
+                executionItem {
+                    title = "只有图片的dialog"
+                    execute {
+                        YFDialog.Builder(it)
+                            .setDoubleBtnView(object : DoubleBtnDialog() {
+                                override fun getTopImageResId(): Int? {
+                                    return R.mipmap.ic_launcher
+                                }
 
-                            override fun getTitle(): String = "我是个标题"
-                            override fun getMessage(): String =
-                                "我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容"
-
-                            override fun getLeftButtonText(): String = "取消"
-                            override fun getRightButtonText(): String = "确定"
-                        })
-                        .build().show()
-                }
-            }
-            executionItem {
-                title = "只有title加顶部有图片的dialog"
-                execute {
-                    YFDialog.Builder(it)
-                        .setDoubleBtnView(object : DoubleBtnDialog() {
-                            override fun getTopImageResId(): Int? {
-                                return R.drawable.dialog_example_bg_top
-                            }
-
-                            override fun getTitle(): String = "我是个标题"
-                            override fun getLeftButtonText(): String = "取消"
-                            override fun getRightButtonText(): String = "确定"
-                        })
-                        .build().show()
-                }
-            }
-            executionItem {
-                title = "提示升级对话框"
-                execute {
-                    YFDialog.Builder(it)
-                        .setDoubleBtnView(object : DoubleBtnDialog() {
-                            override fun getTopImageResId(): Int? = R.drawable.dialog_bg_upgrade
-                            override fun getTitle(): String = "升级弹窗title"
-                            override fun getMessage(): String = "升级弹窗message"
-                            override fun getLeftButtonText(): String = "leftButton"
-                            override fun getRightButtonText(): String = "RightButton"
-                        })
-                        .build().show()
+                                override fun getLeftButtonText(): String = "取消"
+                                override fun getRightButtonText(): String = "确定"
+                            })
+                            .build().show()
+                    }
                 }
 
+                executionItem {
+                    title = "有title有message加顶部有图片的dialog"
+                    execute {
+                        YFDialog.Builder(it)
+                            .setDoubleBtnView(object : DoubleBtnDialog() {
+                                override fun getTopImageResId(): Int? {
+                                    return R.mipmap.ic_launcher
+                                }
+
+                                override fun getTitle(): String = "我是个标题"
+                                override fun getMessage(): String =
+                                    "我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容，我是个内容"
+
+                                override fun getLeftButtonText(): String = "取消"
+                                override fun getRightButtonText(): String = "确定"
+                            })
+                            .build().show()
+                    }
+                }
             }
             executionItem {
                 title = "进度条对话框"
@@ -308,7 +225,7 @@ class MyApplication : Application() {
 }
 
 const val DEBUG = true
-internal  fun debugLog(value: String) {
+internal fun debugLog(value: String) {
     if (DEBUG) {
         Log.d("yf_dialog_app", value)
     }
