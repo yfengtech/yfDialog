@@ -18,13 +18,12 @@ import com.yf.dialog.lib.impl.DoubleBtnDialog
 import com.yf.dialog.lib.impl.ProgressDialog
 import com.yf.dialog.lib.impl.SingleBtnDialog
 import com.yf.smarttemplate.SmartTemplate
-import com.yf.smarttemplate.doc.Document
+import com.yf.smarttemplate.sample.SlidingDrawer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-@Document("README.md")
 class MyApplication : Application() {
 
     private val mDialogLifecycleCallbacks = object : DialogLifecycleCallbacks {
@@ -44,7 +43,15 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         YFDialogManager.registerLifeCycle(mDialogLifecycleCallbacks)
-        SmartTemplate.init(this) {
+
+        val drawer = SlidingDrawer().apply {
+            item {
+                title = "关于"
+                markdownAssetFileName = "README.md"
+            }
+        }
+
+        SmartTemplate.init(this, drawer) {
             executionItem {
                 title = "测试build属性dialog"
                 execute {
